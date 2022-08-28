@@ -31,9 +31,18 @@ You don't need to read input or print anything. Your task is to complete the fun
 - Expected Time Complexity: O(N)
 - Expected Auxiliary Space: O(1)
 
- 
-
 ### Constraints:
 - 1 <= N <= 105
 - 0 <= Elements of List <= 109
 Sum of N over all test cases doesn't exceeds 106
+
+## My Solution
+### The Algorithm
+First, if the linked list is empty, `null` will be returned. Second, if the linked list has only one element, `head` will be returned.
+Finally, if the linked list has more than one element, then:
+- `firstLast` node will be initialized and point to `head`.
+- `secondLast` will be initialized, and point to `null`.
+- while `firstLast.next != null`, move `firstLast` and `secondLast` so at the end of the loop: `firstLast` will point to the last node, and `secondLast` will point to the node before it.
+- After that, `firstLast.next` should reference `head`.
+- Then, `secondLast.next` should reference `null` - so it becomes the last node in the linked list.
+- Finally, the `head` variable should reference now `firstLast` - so `firstLast` become the first node in the linked list. 
